@@ -108,7 +108,7 @@ app.put('/customers/:id', (req, res) => {
     let query = db.query(sql,(err,result) => {
         if(err) throw err
         res.json(result)
-    })
+    })  
 })
 
 app.delete('/customers/:id', (req, res) => {

@@ -1,3 +1,38 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="form_panel mt-3">
+            <div class="card">
+                <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small class="text-white h4 ml-3">Customer register</small></h1>
+                <div class="card-body">
+                    <h5 class="card-title">Register information</h5>
+                    <div class="form">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Contact FirstName</label>
+                                <input name="contactFirstName" type="text" class="form-control"
+                                    placeholder="EX. Supak ...">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your Contactname with
+                                    anyone else.</small>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div> -->
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>
 <p>customer works!</p>
 addressLine1: "54, rue Royale"
 addressLine2: null
@@ -34,6 +69,10 @@ state: null
 <p>Last name valid: {{ contactLastName.value }}</p>
 <ul>
     <li *ngFor="let item of this.customerList; let i = index">
+        {{item.customerNumber}}
+        {{item.customerName}}
         {{item.contactLastName}}
+        <button (click)="del_customer(item)">x</button>
+        <input #f type="text"><button (click)="edit_customer(item,f.value)">update</button>
     </li>
 </ul>
