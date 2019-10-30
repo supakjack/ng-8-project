@@ -3,31 +3,53 @@
     <div class="col-10">
         <div class="form_panel mt-3">
             <div class="card">
-                <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small class="text-white h4 ml-3">Customer register</small></h1>
-                <div class="card-body">
-                    <h5 class="card-title">Register information</h5>
-                    <div class="form">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Contact FirstName</label>
-                                <input name="contactFirstName" type="text" class="form-control"
-                                    placeholder="EX. Supak ...">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your Contactname with
-                                    anyone else.</small>
+                <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small
+                        class="text-white h4 ml-3">Customer register</small></h1>
+                <form>
+                    <!-- Contact Name -->
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Name</h5>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="contactFirstName" class="col-3 col-form-label">Firstname</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="contactFirstName"
+                                                placeholder="Supak">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="contactLastName" class="col-3 col-form-label">Lastname</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="contactLastName"
+                                                placeholder="Pukdam">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"
-                                    placeholder="Password">
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div> -->
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                            <small id="emailHelp" class="ml-5 text-left form-text text-muted">We'll never share your
+                                Contactname with
+                                anyone else.</small>
+                        </div>
                     </div>
-                </div>
+                    <!-- Contact Name -->
+
+                    <!-- btn-form -->
+                    <div class="card-body">
+                        <div class="form-group ">
+                            <div class="row">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- btn-form -->
+
+                </form>
             </div>
         </div>
     </div>
