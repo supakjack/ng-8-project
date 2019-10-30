@@ -1,0 +1,39 @@
+<p>customer works!</p>
+addressLine1: "54, rue Royale"
+addressLine2: null
+city: "Nantes"
+contactFirstName: "Carine "
+contactLastName: "Schmitt"
+country: "France"
+creditLimit: 21000
+customerName: "Atelier graphique"
+customerNumber: 103
+phone: "40.32.2555"
+postalCode: "44000"
+salesRepEmployeeNumber: 1370
+state: null
+<form #f="ngForm" (ngSubmit)="add_customer(f.value)" novalidate>
+    <input name="contactFirstName" ngModel required #contactFirstName placeholder="Carine">
+    <input name="contactLastName" ngModel required #contactLastName placeholder="Schmitt">
+    <input name="addressLine1" ngModel required #addressLine1 placeholder="54, rue Royale">
+    <input name="addressLine2" ngModel required #addressLine2 placeholder="56, rue Royale">
+    <input name="city" ngModel required #city placeholder="Nantes">
+    <input name="country" ngModel required #country placeholder="France">
+    <input name="creditLimit" ngModel required #creditLimit placeholder="21000">
+    <input name="customerName" ngModel required #customerName placeholder="Atelier graphique">
+    <!-- <input name="customerNumber" ngModel required #customerNumber placeholder="103"> -->
+    <input name="phone" ngModel required #phone placeholder="40.32.2555">
+    <input name="postalCode" ngModel required #postalCode placeholder="44000">
+    <input name="salesRepEmployeeNumber" ngModel required #salesRepEmployeeNumber placeholder="1370">
+    <input name="state" ngModel required #state placeholder="Schmitt">
+    <button>Submit</button>
+    <button (click)="get_hello(); $event.preventDefault()">Hello</button>
+</form>
+
+<p>First name value: {{ contactFirstName.value }}</p>
+<p>Last name valid: {{ contactLastName.value }}</p>
+<ul>
+    <li *ngFor="let item of this.customerList; let i = index">
+        {{item.contactLastName}}
+    </li>
+</ul>
