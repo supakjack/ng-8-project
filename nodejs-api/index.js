@@ -28,11 +28,11 @@ db.connect(function(err) {
   console.log("Connected!");
 });
 
-app.get('/customers', (req, res) => { 
+app.get('/customers', (req, res) => {  
  let sql = 'SELECT * FROM customers;' 
     let query = db.query(sql,(err,results) => { 
-       if(err) throw err  
-       res.json(results)   
+       if(err) throw err    
+       res.json(results)
     })
 })
 
@@ -95,10 +95,10 @@ app.post('/customers', (req, res) => {
                 req.body.country + "','" +
                 req.body.salesRepEmployeeNumber + "','" +
                 req.body.creditLimit + "'"+
-            ");"
+            ");" 
     let query = db.query(sql,(err,result) => {
         if(err) throw err
-        res.json(result) 
+        res.json(result)  
     })
 })
 

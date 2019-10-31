@@ -5,18 +5,17 @@
             <div class="card">
                 <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small
                         class="text-white h4 ml-3">Customer register</small></h1>
-                <form>
-
+                <form #f="ngForm" (ngSubmit)="add_customer(f.value)" novalidate>
                     <!-- Contact Name -->
                     <div class="card-body">
-                        <h5 class="card-title">Contact Name</h5>
+                        <h5 class="card-title">Contact</h5>
                         <div class="form-group text-right">
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group row">
                                         <label for="contactFirstName" class="col-3 col-form-label">Firstname</label>
                                         <div class="col-9">
-                                            <input type="text" class="form-control" name="contactFirstName"
+                                            <input type="text" class="form-control" ngModel="Supak" required #contactFirstName name="contactFirstName"
                                                 placeholder="Supak">
                                         </div>
                                     </div>
@@ -26,12 +25,34 @@
                                         <label for="contactLastName" class="col-3 col-form-label">Lastname</label>
                                         <div class="col-9">
                                             <input type="text" class="form-control" name="contactLastName"
-                                                placeholder="Pukdam">
+                                                placeholder="Pukdam" ngModel="Pukdam" required #contactLastName>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <small id="emailHelp" class="ml-5 text-left form-text text-muted">We'll never share your
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="phone" class="col-3 col-form-label">Phone</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="phone"
+                                                placeholder="40.32.2555" ngModel="40.32.2555" required #phone>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="salesRepEmployeeNumber" class="col-3 col-form-label">SRE. Number</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="salesRepEmployeeNumber"
+                                                placeholder="1504" ngModel="1504" required #salesRepEmployeeNumber>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <small class="ml-5 text-left form-text text-muted">We'll never share your
                                 Contactname with
                                 anyone else.</small>
                         </div>
@@ -40,34 +61,122 @@
 
                     <!-- Address -->
                     <div class="card-body">
-                            <h5 class="card-title">Address</h5>
-                            <div class="form-group text-right">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <label for="addressLine1" class="col-3 col-form-label">First adress</label>
-                                            <div class="col-9">
-                                                <input type="text" class="form-control" name="addressLine1"
-                                                    placeholder="Bangkok">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-group row">
-                                            <label for="addressLine2" class="col-3 col-form-label">Second address</label>
-                                            <div class="col-9">
-                                                <input type="text" class="form-control" name="addressLine2"
-                                                    placeholder="Hua-Hin">
-                                            </div>
+                        <h5 class="card-title">Address</h5>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="addressLine1" class="col-3 col-form-label">First adress</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="addressLine1"
+                                                placeholder="Bangkok" ngModel="Bangkok" required #addressLine1>
                                         </div>
                                     </div>
                                 </div>
-                                <small id="emailHelp" class="ml-5 text-left form-text text-muted">We'll never share your
-                                    Address with
-                                    anyone else.</small>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="addressLine2" class="col-3 col-form-label">Second address</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="addressLine2"
+                                                placeholder="Hua-Hin" ngModel="Hua-Hin" required #addressLine2>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- Address -->
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="postalCode" class="col-3 col-form-label">Postal code</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="postalCode"
+                                                placeholder="44000" ngModel="44000" required #postalCode>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="state" class="col-3 col-form-label">State</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="state" placeholder="USA"
+                                            ngModel="USA" required #state>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="city" class="col-3 col-form-label">City</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="city" placeholder="Nantes" ngModel="Nantes" required #city>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="country" class="col-3 col-form-label">Country</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="country" placeholder="France" ngModel="France" required #country>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <small class="ml-5 text-left form-text text-muted">We'll never share your
+                                Address with
+                                anyone else.</small>
+                        </div>
+                    </div>
+                    <!-- Address -->
+
+                    <!-- Customer -->
+                    <div class="card-body">
+                        <h5 class="card-title">Customer</h5>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="customerName" class="col-3 col-form-label">Full name</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="customerName"
+                                                placeholder="Somcahi Jaidee" ngModel="France" required #customerName>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="customerNumber" class="col-3 col-form-label">Number</label>
+                                        <div class="col-9">
+                                            <input readonly type="text" class="form-control" name="customerNumber"
+                                                placeholder="101" ngModel="xxx-xxx-xxx-xxx">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group row">
+                                        <label for="creditLimit" class="col-3 col-form-label">CreditLimit</label>
+                                        <div class="col-9">
+                                            <input type="text" class="form-control" name="creditLimit"
+                                                placeholder="21000" value="21000">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                </div>
+                            </div>
+                            <small class="ml-5 text-left form-text text-muted">We'll never share your
+                                Customer with
+                                anyone else.</small>
+                        </div>
+                    </div>
+                    <!-- Customer -->
 
                     <!-- btn-form -->
                     <div class="card-body">
@@ -87,40 +196,7 @@
     </div>
     <div class="col-1"></div>
 </div>
-<p>customer works!</p>
-addressLine1: "54, rue Royale"
-addressLine2: null
-city: "Nantes"
-contactFirstName: "Carine "
-contactLastName: "Schmitt"
-country: "France"
-creditLimit: 21000
-customerName: "Atelier graphique"
-customerNumber: 103
-phone: "40.32.2555"
-postalCode: "44000"
-salesRepEmployeeNumber: 1370
-state: null
-<form #f="ngForm" (ngSubmit)="add_customer(f.value)" novalidate>
-    <input name="contactFirstName" ngModel required #contactFirstName placeholder="Carine">
-    <input name="contactLastName" ngModel required #contactLastName placeholder="Schmitt">
-    <input name="addressLine1" ngModel required #addressLine1 placeholder="54, rue Royale">
-    <input name="addressLine2" ngModel required #addressLine2 placeholder="56, rue Royale">
-    <input name="city" ngModel required #city placeholder="Nantes">
-    <input name="country" ngModel required #country placeholder="France">
-    <input name="creditLimit" ngModel required #creditLimit placeholder="21000">
-    <input name="customerName" ngModel required #customerName placeholder="Atelier graphique">
-    <!-- <input name="customerNumber" ngModel required #customerNumber placeholder="103"> -->
-    <input name="phone" ngModel required #phone placeholder="40.32.2555">
-    <input name="postalCode" ngModel required #postalCode placeholder="44000">
-    <input name="salesRepEmployeeNumber" ngModel required #salesRepEmployeeNumber placeholder="1370">
-    <input name="state" ngModel required #state placeholder="Schmitt">
-    <button>Submit</button>
-    <button (click)="get_hello(); $event.preventDefault()">Hello</button>
-</form>
 
-<p>First name value: {{ contactFirstName.value }}</p>
-<p>Last name valid: {{ contactLastName.value }}</p>
 <ul>
     <li *ngFor="let item of this.customerList; let i = index">
         {{item.customerNumber}}
