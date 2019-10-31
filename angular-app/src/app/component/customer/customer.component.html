@@ -205,7 +205,7 @@
         <div class="form_panel mt-3">
             <div class="card">
                 <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small
-                        class="text-white h4 ml-3">Customer register</small></h1>
+                        class="text-white h4 ml-3">Customer list</small></h1>
                 <div class="card-body">
                     <div class="row">
                         <div *ngFor="let item of this.customerList; let i = index" class="col-4">
@@ -268,12 +268,3 @@
         <!--  -->
     </div>
 </div>
-<ul>
-    <li *ngFor="let item of this.customerList; let i = index">
-        {{item.customerNumber}}
-        {{item.customerName}}
-        {{item.contactLastName}}
-        <button (click)="del_customer(item)">x</button>
-        <input #f type="text"><button (click)="edit_customer(item,f.value)">update</button>
-    </li>
-</ul>
