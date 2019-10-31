@@ -29,20 +29,20 @@ export class CustomerComponent implements OnInit {
 
   add_customer(data) {
     console.log(data)
-    data.addressLine1 = "Erling Skakkes gate 78"
-    data.addressLine2 = null
-    data.city = "Stavern"
-    data.contactFirstName = "JACK"
-    data.contactLastName = "SUPAK"
-    data.country = "Norway"
-    data.creditLimit = 81700
-    data.customerName = "Baane Mini Imports"
-    data.customerNumber = 121
-    data.phone = "07-98 9555"
-    data.postalCode = "4110"
-    data.salesRepEmployeeNumber = 1504
-    data.state = null
-    console.log(data)
+    // data.addressLine1 = "Erling Skakkes gate 78"
+    // data.addressLine2 = null
+    // data.city = "Stavern"
+    // data.contactFirstName = "JACK"
+    // data.contactLastName = "SUPAK"
+    // data.country = "Norway"
+    // data.creditLimit = 81700
+    // data.customerName = "Baane Mini Imports"
+    // data.customerNumber = 121
+    // data.phone = "07-98 9555"
+    // data.postalCode = "4110"
+    // data.salesRepEmployeeNumber = 1504
+    // data.state = null
+    // console.log(data)
     this.cus_ser.insert_customer(data).subscribe(res => {
       console.log(res)
       this.get_all_customer()

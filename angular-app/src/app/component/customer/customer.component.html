@@ -15,8 +15,8 @@
                                     <div class="form-group row">
                                         <label for="contactFirstName" class="col-3 col-form-label">Firstname</label>
                                         <div class="col-9">
-                                            <input type="text" class="form-control" ngModel="Supak" required #contactFirstName name="contactFirstName"
-                                                placeholder="Supak">
+                                            <input type="text" class="form-control" ngModel="Supak" required
+                                                #contactFirstName name="contactFirstName" placeholder="Supak">
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +44,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group row">
-                                        <label for="salesRepEmployeeNumber" class="col-3 col-form-label">SRE. Number</label>
+                                        <label for="salesRepEmployeeNumber" class="col-3 col-form-label">SRE.
+                                            Number</label>
                                         <div class="col-9">
                                             <input type="text" class="form-control" name="salesRepEmployeeNumber"
                                                 placeholder="1504" ngModel="1504" required #salesRepEmployeeNumber>
@@ -100,7 +101,7 @@
                                         <label for="state" class="col-3 col-form-label">State</label>
                                         <div class="col-9">
                                             <input type="text" class="form-control" name="state" placeholder="USA"
-                                            ngModel="USA" required #state>
+                                                ngModel="USA" required #state>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +113,8 @@
                                     <div class="form-group row">
                                         <label for="city" class="col-3 col-form-label">City</label>
                                         <div class="col-9">
-                                            <input type="text" class="form-control" name="city" placeholder="Nantes" ngModel="Nantes" required #city>
+                                            <input type="text" class="form-control" name="city" placeholder="Nantes"
+                                                ngModel="Nantes" required #city>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +122,8 @@
                                     <div class="form-group row">
                                         <label for="country" class="col-3 col-form-label">Country</label>
                                         <div class="col-9">
-                                            <input type="text" class="form-control" name="country" placeholder="France" ngModel="France" required #country>
+                                            <input type="text" class="form-control" name="country" placeholder="France"
+                                                ngModel="France" required #country>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +154,7 @@
                                         <label for="customerNumber" class="col-3 col-form-label">Number</label>
                                         <div class="col-9">
                                             <input readonly type="text" class="form-control" name="customerNumber"
-                                                placeholder="101" ngModel="xxx-xxx-xxx-xxx">
+                                                placeholder="101" ngModel="121" required #customerNumber>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +167,7 @@
                                         <label for="creditLimit" class="col-3 col-form-label">CreditLimit</label>
                                         <div class="col-9">
                                             <input type="text" class="form-control" name="creditLimit"
-                                                placeholder="21000" value="21000">
+                                                placeholder="21000" ngModel="21000" required #creditLimit>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +199,17 @@
     </div>
     <div class="col-1"></div>
 </div>
-
+<div class="row">
+    <div class="col">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Navbar</a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+</div>
 <ul>
     <li *ngFor="let item of this.customerList; let i = index">
         {{item.customerNumber}}
