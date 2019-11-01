@@ -8,12 +8,14 @@ import { CustomerService } from "../../service/customer.service";
 })
 export class CustomerComponent implements OnInit {
 
-  private customerList: Array<rs_customer>
+  private customerList: any
+  private customer: any
 
   constructor(private cus_ser: CustomerService) { }
 
   ngOnInit() {
     this.get_all_customer()
+    this.customer = false;
   }
 
   get_all_customer() {
@@ -51,9 +53,19 @@ export class CustomerComponent implements OnInit {
       this.get_all_customer()
     })
   }
-  // search_customer(data){
-  //   return console.log(data)
-  // }
+  search_customer_by_id(data){
+    if(data){
+      this.cus_ser.select_by_id(data).subscribe(res=>{
+        this.customer = res
+        console.log(res)
+      })
+      this.customerList = false;
+    }else{
+      this.get_all_customer()
+    }
+    
+    
+  }
   get_hello(data: any[]) {
     console.log("hello")
     console.log(data)

@@ -47,7 +47,7 @@
                                         <label for="salesRepEmployeeNumber" class="col-3 col-form-label">SRE.
                                             Number</label>
                                         <div class="col-9">
-                                            <input type="text" class="form-control" name="salesRepEmployeeNumber"
+                                            <input readonly type="text" class="form-control" name="salesRepEmployeeNumber"
                                                 placeholder="1504" ngModel="1504" required #salesRepEmployeeNumber>
                                         </div>
                                     </div>
@@ -204,10 +204,20 @@
 
         <div class="form_panel mt-3">
             <div class="card">
-                <h1 class="card-header bg-primary"><i class="fab fa-intercom text-white"></i> <small
-                        class="text-white h4 ml-3">Customer list</small></h1>
+                <h1 class="card-header bg-primary d-flex justify-content-between">
+                    <div class="">
+                        <i class="fab fa-intercom text-white"></i>
+                        <small class="text-white h4 ml-3">Customer list</small>
+                    </div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input required #search_id class="form-control mr-sm-2" type="search" placeholder="Search by id"
+                            aria-label="Search by id">
+                        <button (click)="search_customer_by_id(search_id.value)" class="btn btn-primary my-2 my-sm-0"
+                            type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </h1>
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row" *ngIf="this.customerList">
                         <div *ngFor="let item of this.customerList; let i = index" class="col-4">
                             <div class="card mb-3">
                                 <div class="card-body">
@@ -220,14 +230,28 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-mx">
+                                        </div>
                                         <div class="col">
-                                            <h5 class="card-title">{{i+1}}. <span *ngIf="(item.contactFirstName)"
-                                                    class="card-text">{{item.contactFirstName}}</span> <span
-                                                    *ngIf="(!item.contactFirstName)" class="card-text">NO DATA</span>
-                                                &nbsp; <span *ngIf="(item.contactFirstName)"
-                                                    class="card-text">{{item.contactLastName}}</span> <span
-                                                    *ngIf="(!item.contactLastName)" class="card-text">NO DATA</span>
-                                            </h5>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h5 class="card-title">{{i+1}}. <span
+                                                            *ngIf="(item.contactFirstName)"
+                                                            class="card-text">{{item.contactFirstName}}</span> <span
+                                                            *ngIf="(!item.contactFirstName)" class="card-text">NO
+                                                            DATA</span>
+                                                        &nbsp; <span *ngIf="(item.contactFirstName)"
+                                                            class="card-text">{{item.contactLastName}}</span> <span
+                                                            *ngIf="(!item.contactLastName)" class="card-text">NO
+                                                            DATA</span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col">
+                                                        <h5>ID : {{item.customerNumber}}</h5>
+                                                </div>
+                                            </div>
+
+
                                         </div>
                                         <div class="col-mx">
                                         </div>
@@ -259,6 +283,72 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row" *ngIf="this.customer">
+                            <div *ngFor="let item of this.customer; let i = index" class="col-4">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col">
+                                            </div>
+                                            <div class="col-mx">
+                                                <button class="btn btn-danger text-right" (click)="del_customer(item)"><i
+                                                        class="fas fa-ban"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-mx">
+                                            </div>
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col-9">
+                                                        <h5 class="card-title">{{i+1}}. <span
+                                                                *ngIf="(item.contactFirstName)"
+                                                                class="card-text">{{item.contactFirstName}}</span> <span
+                                                                *ngIf="(!item.contactFirstName)" class="card-text">NO
+                                                                DATA</span>
+                                                            &nbsp; <span *ngIf="(item.contactFirstName)"
+                                                                class="card-text">{{item.contactLastName}}</span> <span
+                                                                *ngIf="(!item.contactLastName)" class="card-text">NO
+                                                                DATA</span>
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col">
+                                                            <h5>ID : {{item.customerNumber}}</h5>
+                                                    </div>
+                                                </div>
+    
+    
+                                            </div>
+                                            <div class="col-mx">
+                                            </div>
+                                        </div>
+                                        <div class="row ml-1">
+                                            <div class="col-mx">
+                                                <p class="card-text h5 mt-1">Customer : </p>
+                                            </div>
+                                            <div class="col-mx ml-2">
+                                                <input *ngIf="(item.customerName)" [(ngModel)]="item.customerName"
+                                                    type="text" class="form-control" placeholder="item.customerName">
+                                                <input *ngIf="(!item.customerName)" [(ngModel)]="item.customerName"
+                                                    type="text" class="form-control" placeholder="NO DATA">
+                                            </div>
+                                            <div class="col-mx ml-2">
+    
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                            </div>
+                                            <div class="col-mx">
+                                                <button class="btn btn-primary"
+                                                    (click)="edit_customer(item,item.customerName)"><i
+                                                        class="fas fa-pen"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
 
             </div>
