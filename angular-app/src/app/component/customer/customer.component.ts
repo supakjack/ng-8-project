@@ -72,19 +72,3 @@ export class CustomerComponent implements OnInit {
   }
 
 }
-
-interface rs_customer {
-  addressLine1: any
-  addressLine2: any
-  city: any
-  contactFirstName: any
-  contactLastName: any
-  country: any
-  creditLimit: any
-  customerName: any
-  customerNumber: any
-  phone: any
-  postalCode: any
-  salesRepEmployeeNumber: any
-  state: any
-}
